@@ -18,7 +18,7 @@ public class DbController {
     }
 
     public String getNames(){
-        String query = "SELECT Name FROM tracks LIMIT 50";
+        String query = "SELECT Composer, Name FROM tracks";
         try {
             statement = connection.prepareStatement(query);
             ResultSet result = statement.executeQuery();
@@ -27,8 +27,9 @@ public class DbController {
             StringBuilder ss = new StringBuilder();
 
             while(result.next()){
-                String name = result.getString(1);  //index 1 refers to Name from query
-                ss.append(name);
+                String composer = result.getString(1);  //index 1 refers to Name from query
+                String name = result.getString(2);  //index 2 refers to Composer from query
+                ss.append(composer + ": "+name);
                 ss.append("\n");
             }
             String output = ss.toString();
