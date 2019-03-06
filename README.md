@@ -1,5 +1,5 @@
 # Java_sql
-It's a program that connects with a local database containing songs.
+It's a program that connects to a local database containing songs.
 
 Program allows user to search for songs based on partial input of it's title.
 
